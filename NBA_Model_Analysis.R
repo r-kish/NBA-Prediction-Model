@@ -649,11 +649,32 @@ career_outcome <- distinct(career_outcome, Player, .keep_all = TRUE)
 ################################################################################
 
   # ANALYSIS 5: Predicting Offensive Rebound Percentage using Historic Data
-  # This analysis will use historic NBA rebound statistical data to predict
-  # what the rebounding percentage will be for the New York Knicks' and 
-  # Brooklyn Nets' 71st game.
+  # This analysis will use historic NBA to find the average rebound success rate
+  # for all NBA teams in the 2022-23 season. Additionally, this model will be
+  # used to statistical data to predict what the rebounding percentage will be 
+  # for the New York Knicks' and Brooklyn Nets' 71st game.
   # Data used is from the 2022-23 season, but only the first 70 of 82 games are 
   # analyzed.
+
+# Determine which game to provide prediction for
+rebounding_data_NBA <- subset(rebounding_data, game_number <= 70)
+
+# Calculate rebounding percent based on mean of percentages
+rebounding_percent <- mean(rebounding_data_NBA$oreb_pct) # Yields 0.27776 or 27.8%
+
+# Calculate rebounding percent based on the sum of rebounds / sum of chances
+rebounding_sum <- summarise(rebounding_data_NBA, offensive_rebounds, off_rebound_chances) %>% 
+  summarise_all(funs(sum))
+rebounding_percent_multi_NBA <- rebounding_sum$offensive_rebounds / rebounding_sum$off_rebound_chances # Yields 0.28092 or 28.1%
+
+# Visualization
+ggplot(data = rebounding_data_NBA, aes(x = game_number, y = oreb_pct, group = 1, label = game_number)) +
+  geom_line(arrow = arrow())+
+  geom_point() + xlab("Game Number (of 1-70)") + ylab("Percentage of Successful Rebounds") + 
+  ggtitle("Percentage of NBA Rebounds during Games 1-70 of the 2022-23 Season") + 
+  geom_hline(yintercept = rebounding_percent_multi_NBA, color = "red") + 
+  annotate("text", x = 45, y = (rebounding_percent_multi_NBA + 0.23), label = "NBA rebound percent average = 28.1% (28.092%)") + 
+  theme(legend.position="none")
 
 #Separate out only New York Knicks games 1-70 data
 rebounding_data_NYK <- subset(rebounding_data, team == 'NYK')
@@ -680,17 +701,17 @@ ggplot(data = rebounding_data_NYK, aes(x = game_number, y = oreb_pct, group = 1,
   theme(legend.position="none") + 
   annotate("text", x = 24, y = (rebounding_percent_multi_NYK - 0.15), label = "Polynomial linear regression of rebound % trend")
 
-#Separate out only New York Nets games 1-70 data
+#Separate out only Brooklyn Nets games 1-70 data
 rebounding_data_BKN <- subset(rebounding_data, team == 'BKN')
 rebounding_data_BKN <- subset(rebounding_data_BKN, game_number <= 70)
 
 # Calculate rebounding percent based on mean of percentages
-rebounding_percent <- mean(rebounding_data_BKN$oreb_pct) # Yields 0.31717 or 31.7%
+rebounding_percent <- mean(rebounding_data_BKN$oreb_pct) # Yields 0.21894 or 21.9%
 
 # Calculate rebounding percent based on the sum of rebounds / sum of chances
 rebounding_sum <- summarise(rebounding_data_BKN, offensive_rebounds, off_rebound_chances) %>% 
   summarise_all(funs(sum))
-rebounding_percent_multi_BKN <- rebounding_sum$offensive_rebounds / rebounding_sum$off_rebound_chances # Yields 0.31967 or 32%
+rebounding_percent_multi_BKN <- rebounding_sum$offensive_rebounds / rebounding_sum$off_rebound_chances # Yields 0.22295 or 22.3%
 
 # Visualization
 ggplot(data = rebounding_data_BKN, aes(x = game_number, y = oreb_pct, group = 1, label = game_number)) +
@@ -698,7 +719,7 @@ ggplot(data = rebounding_data_BKN, aes(x = game_number, y = oreb_pct, group = 1,
   geom_point() + xlab("Game Number (of 1-70)") + ylab("Percentage of Successful Rebounds") + 
   ggtitle("Percentage of BKN Rebounds during Games 1-70 of the 2022-23 Season") + 
   geom_hline(yintercept = rebounding_percent_multi_BKN, color = "red") + 
-  annotate("text", x = 50, y = (rebounding_percent_multi_BKN + 0.17), label = "BKN rebound percent average = 32% (31.967%)") + 
+  annotate("text", x = 50, y = (rebounding_percent_multi_BKN + 0.17), label = "BKN rebound percent average = 22.3% (22.295%)") + 
   geom_segment(aes(x = 37, y = 0.24, xend = 39.5, yend = 0.37, color = 'blue'), arrow = arrow(length = unit(0.5, "cm"))) + 
   theme(legend.position="none") + geom_smooth(method='lm', formula = y ~ poly(x,8), linewidth = 1) + 
   geom_segment(aes(x = 27, y = 0.18, xend = 29.5, yend = 0.05, color = 'red'), arrow = arrow(length = unit(0.5, "cm"))) + 
