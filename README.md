@@ -18,27 +18,27 @@ info here
 ## Average Time from Draft to All-NBA/All-Star Selection
 Info here
 
-![AvgPointsPerGame](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/AvgPoints.png)
+![DraftToPick](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/YearsToDraft.png)
 
 
 # Career Outcome Analysis and Prediction Model
 - info here
-![AvgPointsPerGame](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/AvgPoints.png)
+![AvgPointsPerGame](...)
 
 ## Career Outcomes of Veteran Players
 info here
-![AvgPointsPerGame](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/AvgPoints.png)
+![CareerOutcomes](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/CareerOutcome.png)
 
 ## Distribution of Season Outcomes based on Player's Career Outcome
 info here
-![AvgPointsPerGame](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/AvgPoints.png)
+![SeasonOutcomes](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/SeasonOutcome.png)
 
 ## Prediction Model Plan
-![AvgPointsPerGame](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/AvgPoints.png)
+![ModelPlan](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/PredictiveModel.png)
 
 # Rebound Success Analysis and Prediction Model
 - info here
-![AvgPointsPerGame](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/AvgPoints.png)
+![NBARebound](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/NBARebound.png)
 
 ## New York Knicks vs Brooklyn Nets Rebound Success Analysis and Predictions
 ![NYKRebound](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/NYKRebound.png)
