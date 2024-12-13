@@ -1,2 +1,2 @@
-# NBA Data Science Project
+# NBA Prediction Model and Data Science Project
 
