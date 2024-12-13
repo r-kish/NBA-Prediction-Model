@@ -41,5 +41,6 @@ info here
 ![AvgPointsPerGame](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/AvgPoints.png)
 
 ## New York Knicks vs Brooklyn Nets Rebound Success Analysis and Predictions
-![AvgPointsPerGame](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/AvgPoints.png)
+![NYKRebound](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/NYKRebound.png)
+![BKNRebound](https://github.com/r-kish/NBA-Prediction-Model/blob/main/images/BKNRebound.png)
 
