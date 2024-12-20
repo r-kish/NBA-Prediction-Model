@@ -1,5 +1,7 @@
 # NBA Prediction Model and Data Science Project
 
+### This page is a work in progress-- please come back soon for the finished research entry!
+
 ### Contents
 - [Introduction](#Introduction)
 - [All-NBA/All-Star Performance Analysis](#all-NBA/all-star-performance-analysis)
