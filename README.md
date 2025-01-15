@@ -27,7 +27,6 @@ Info here
 
 # Career Outcome Analysis and Prediction Model
 - info here
-![AvgPointsPerGame](...)
 
 ## Career Outcomes of Veteran Players
 info here
